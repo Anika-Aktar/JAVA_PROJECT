@@ -133,7 +133,6 @@ public class AdminBlock extends JFrame {
         return textField;
     }
 
-    // Helper method to create a custom JPasswordField
     private JPasswordField createCustomPasswordField() {
         JPasswordField passwordField = new JPasswordField(10);
         passwordField.setMaximumSize(new Dimension(200, 30));  // Set size
@@ -144,7 +143,6 @@ public class AdminBlock extends JFrame {
         return passwordField;
     }
 
-    // Helper method to create a custom JButton with specified background and text colors
     private JButton createCustomButton(String text, Color backgroundColor, Color textColor) {
         JButton button = new JButton(text);
         button.setBackground(backgroundColor);
