@@ -24,21 +24,25 @@ public class VoteManager {
         return posts;
     }
 
-    public static void registerCandidate(String post, String name, String dob, String fatherName, String motherName,
+    public static void registerCandidate(String post, String name, String dob,String nid, String fatherName, String motherName,
                                          String presentAddress, String permanentAddress, String qualification,
                                          String nationality, String bloodGroup) {
         if (!registeredCandidates.contains(name)) {
             ArrayList<String> postCandidates = candidates.get(post);
             postCandidates.add(name);
             votes.get(post).put(name, 0);
-            registeredCandidates.add(name);  // Mark candidate as registered
+            registeredCandidates.add(name); 
+            registeredCandidates.add(nid); 
+            // Mark candidate as registered
         }
     }
 
     public static boolean isCandidateRegistered(String name) {
         return registeredCandidates.contains(name);
     }
-
+public static boolean isNIDRegistered(String nid) {
+    return registeredCandidates.contains(nid); // Check if the NID is registered
+}
     public static ArrayList<String> getCandidates(String post) {
         return candidates.get(post);
     }
@@ -55,7 +59,7 @@ public class VoteManager {
     }
 
     public static boolean isVotingFinished() {
-        return true; // Placeholder, should be dynamic
+        return true; 
     }
 
     public static String getResults() {
