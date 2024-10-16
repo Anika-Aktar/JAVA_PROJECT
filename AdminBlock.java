@@ -47,7 +47,15 @@ public class AdminBlock extends JFrame {
                 }
             }
         });
-
+// Create the "Back" button
+        JButton backButton = createCustomButton("Back", Color.RED, Color.WHITE);
+        backButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Navigate back to the previous menu or page
+                new MenuPage().setVisible(true); // Assuming MenuPage is your previous page
+                dispose(); // Close current window
+            }
+        });
         // Add components to the background panel
         backgroundPanel.add(Box.createVerticalGlue());  // Push components to the center
         backgroundPanel.add(passwordLabel);
@@ -55,6 +63,8 @@ public class AdminBlock extends JFrame {
         backgroundPanel.add(passwordField);
         backgroundPanel.add(Box.createVerticalStrut(10));
         backgroundPanel.add(enterButton);
+        backgroundPanel.add(Box.createVerticalStrut(10));
+        backgroundPanel.add(backButton);  // Add the "Back" button at the bottom
         backgroundPanel.add(Box.createVerticalGlue());
 
         // Set the background panel as the content pane
@@ -133,6 +143,7 @@ public class AdminBlock extends JFrame {
         return textField;
     }
 
+    // Helper method to create a custom JPasswordField
     private JPasswordField createCustomPasswordField() {
         JPasswordField passwordField = new JPasswordField(10);
         passwordField.setMaximumSize(new Dimension(200, 30));  // Set size
@@ -143,6 +154,7 @@ public class AdminBlock extends JFrame {
         return passwordField;
     }
 
+    // Helper method to create a custom JButton with specified background and text colors
     private JButton createCustomButton(String text, Color backgroundColor, Color textColor) {
         JButton button = new JButton(text);
         button.setBackground(backgroundColor);
