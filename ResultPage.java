@@ -47,7 +47,21 @@ public class ResultPage extends JFrame {
                             dispose(); // Close the ResultPage
                         }
                     });
+                    //Back button setup
+        JButton backButton = new JButton("Back");
+        backButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        backButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Navigate back to the previous page, e.g., MenuPage
+                new MenuPage().setVisible(true);
+                dispose(); // Close current window
+            }
+        });
+        // Add buttons to the panel
+        backgroundPanel.add(showResultButton, BorderLayout.NORTH); // Show result button at the top
+        backgroundPanel.add(backButton, BorderLayout.WEST); // Back button on the left
 
+        setContentPane(backgroundPanel);
                     backgroundPanel.add(showThanksButton, BorderLayout.SOUTH);
                     backgroundPanel.revalidate();
                     backgroundPanel.repaint();
