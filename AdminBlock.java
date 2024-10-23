@@ -1,5 +1,3 @@
-
-//<<<<<<< HEAD
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,7 +18,7 @@ public class AdminBlock extends JFrame {
         postNames = new ArrayList<>();
 
         // Load the background image
-        ImageIcon originalIcon = new ImageIcon("C:\\Users\\USER\\Pictures\\Screenshots\\Screenshot (167).png"); // Path to your image
+        ImageIcon originalIcon = new ImageIcon("C:\\Users\\DELL\\OneDrive\\Pictures\\Screenshot (167).png"); // Path to your image
         Image originalImage = originalIcon.getImage();
 
         // Create a panel with custom painting for background
@@ -38,7 +36,7 @@ public class AdminBlock extends JFrame {
         JLabel passwordLabel = createCustomLabel("Enter Admin Password:", Color.WHITE);
         passwordField = createCustomPasswordField();
 
-        JButton enterButton = createCustomButton("Enter", Color.BLUE, Color.WHITE);
+        JButton enterButton = createCustomButton("Enter", Color.GRAY, Color.WHITE);
         enterButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String password = new String(passwordField.getPassword());
@@ -50,7 +48,7 @@ public class AdminBlock extends JFrame {
             }
         });
 // Create the "Back" button
-        JButton backButton = createCustomButton("Back", Color.white, Color.BLACK);
+        JButton backButton = createCustomButton("Back", Color.WHITE, Color.BLACK);
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Navigate back to the previous menu or page
@@ -75,10 +73,10 @@ public class AdminBlock extends JFrame {
     }
 
     private void enterAdminMode() {
-        JLabel postLabel = createCustomLabel("Enter Total Number of Posts:", Color.white);
+        JLabel postLabel = createCustomLabel("Enter Total Number of Posts:", Color.WHITE);
         postField = createCustomTextField();
 
-        JButton submitButton = createCustomButton("Submit", Color.darkGray, Color.WHITE);
+        JButton submitButton = createCustomButton("Submit", Color.CYAN, Color.BLACK);
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -129,7 +127,7 @@ public class AdminBlock extends JFrame {
     private JLabel createCustomLabel(String text, Color textColor) {
         JLabel label = new JLabel(text, SwingConstants.CENTER);
         label.setForeground(textColor);
-        label.setFont(new Font("Serif", Font.BOLD, 20));
+        label.setFont(new Font("MV Boli", Font.BOLD, 20));
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
         return label;
     }
@@ -138,7 +136,7 @@ public class AdminBlock extends JFrame {
     private JTextField createCustomTextField() {
         JTextField textField = new JTextField(10);
         textField.setMaximumSize(new Dimension(200, 30));  // Set size
-        textField.setFont(new Font("Serif", Font.PLAIN, 18));
+        textField.setFont(new Font("Serif", Font.BOLD, 18));
         textField.setBackground(Color.LIGHT_GRAY);  // Set background color
         textField.setForeground(Color.BLACK);  // Set text color
         textField.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -149,7 +147,7 @@ public class AdminBlock extends JFrame {
     private JPasswordField createCustomPasswordField() {
         JPasswordField passwordField = new JPasswordField(10);
         passwordField.setMaximumSize(new Dimension(200, 30));  // Set size
-        passwordField.setFont(new Font("Serif", Font.PLAIN, 18));
+        passwordField.setFont(new Font("Serif", Font.BOLD, 18));
         passwordField.setBackground(Color.LIGHT_GRAY);  // Set background color
         passwordField.setForeground(Color.BLACK);  // Set text color
         passwordField.setAlignmentX(Component.CENTER_ALIGNMENT);
