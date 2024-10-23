@@ -1,5 +1,3 @@
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,7 +19,7 @@ public class CandidateRegistration extends JFrame {
         setLocationRelativeTo(null);
 
         // Load the background image
-        ImageIcon originalIcon = new ImageIcon("C:\\Users\\USER\\Downloads\\craiyon_230316_give_a_background_in_grey_color.png"); // Path to your image
+        ImageIcon originalIcon = new ImageIcon("C:\\Users\\DELL\\OneDrive\\Pictures\\craiyon_230316_give_a_background_in_grey_color.png"); // Path to your image
         Image originalImage = originalIcon.getImage();
 
         // Create a panel with custom painting for background
@@ -37,44 +35,33 @@ public class CandidateRegistration extends JFrame {
 
         // Create and customize form components
         JLabel nameLabel = createCustomLabel("Name:");
-        nameLabel.setForeground(Color.WHITE);
         nameField = createCustomTextField();
 
-
         JLabel dobLabel = createCustomLabel("Date of Birth (YYYY-MM-DD):");
-        dobLabel.setForeground(Color.WHITE);
         dobField = createCustomTextField();
 
         JLabel fatherNameLabel = createCustomLabel("Father's Name:");
-        fatherNameLabel.setForeground(Color.WHITE);
         fatherNameField = createCustomTextField();
 
         JLabel motherNameLabel = createCustomLabel("Mother's Name:");
-        motherNameLabel.setForeground(Color.WHITE);
         motherNameField = createCustomTextField();
 
         JLabel presentAddressLabel = createCustomLabel("Present Address:");
-        presentAddressLabel.setForeground(Color.WHITE);
         presentAddressField = createCustomTextField();
 
         JLabel permanentAddressLabel = createCustomLabel("Permanent Address:");
-        permanentAddressLabel.setForeground(Color.WHITE);
         permanentAddressField = createCustomTextField();
 
         JLabel qualificationLabel = createCustomLabel("Educational Qualification:");
-        qualificationLabel.setForeground(Color.WHITE);
         qualificationField = createCustomTextField();
 
         JLabel nationalityLabel = createCustomLabel("Nationality:");
-        nationalityLabel.setForeground(Color.WHITE);
         nationalityField = createCustomTextField();
 
         JLabel bloodGroupLabel = createCustomLabel("Blood Group:");
-        bloodGroupLabel.setForeground(Color.WHITE);
         bloodGroupField = createCustomTextField();
         
-        JLabel nidLabel = createCustomLabel("NID (11 digits):");
-        nidLabel.setForeground(Color.WHITE);
+         JLabel nidLabel = createCustomLabel("NID (11 digits):");
         nidField = createCustomTextField();
 
         JButton registerButton = createCustomButton("Register", Color.WHITE, Color.RED);
@@ -163,7 +150,7 @@ public class CandidateRegistration extends JFrame {
         backgroundPanel.add(registerButton);
          backgroundPanel.add(Box.createVerticalStrut(20)); // Space between buttons
         backgroundPanel.add(backButton);
-        backgroundPanel.add(Box.createHorizontalBox());
+        backgroundPanel.add(Box.createVerticalGlue());
 
         // Set the background panel as the content pane
         setContentPane(backgroundPanel);
@@ -192,7 +179,7 @@ public class CandidateRegistration extends JFrame {
     // Helper method to create a custom JLabel with specified text color
     private JLabel createCustomLabel(String text) {
         JLabel label = new JLabel(text, SwingConstants.LEFT);
-        label.setForeground(Color.BLACK);
+        label.setForeground(Color.WHITE);
         label.setFont(new Font("Serif", Font.BOLD, 18));
         return label;
     }
